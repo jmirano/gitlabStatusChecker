@@ -101,20 +101,8 @@ def index():
         return 'Gitlab status check is running.'
 
 
-schedule.every(10).seconds.do(fetch_and_save_gitlab_status)
-
-# Background scheduler loop
-def scheduler_loop():
-    while True:
-        schedule.run_pending()
-        time.sleep(1) 
-
 if __name__ == '__main__':
     db.create_all()
-
-    import threading
-    scheduler_thread = threading.Thread(target=scheduler_loop)
-    scheduler_thread.start()
 
     app.run(debug=True)
     
