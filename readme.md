@@ -1,23 +1,14 @@
-To run go to be folder and run the following command:
-python -m flask run
+To run locally
+follow the following steps:
+1. Install Docker if you haven't
+2. go inside the BE folder and run the following command to build the image:
+    docker build -t flask-app .       
+3. Run the following command to start the app:
+    docker run -d -p 8080:5000 flask-app
+
 
 To download CSV reports simply run
-go to URL or if in local http://127.0.0.1:5000/download-csv
-
-Turn Off Mock:
-for local testing the app is configured to mock responses can turn off by setting mock to false
-
-update any URLs needed in app.py
-
-Should there any issues with the database:
-Run the following
-
-flask shell
-
-once flask shell is open
-
-from app import db, Status
-db.create_all()
+go to URL or if in local http://localhost:8080/download-csv
 
 To run perodically:
 run the following commands (the example below is set to 10 minutes)

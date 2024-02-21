@@ -99,10 +99,13 @@ def index():
         return 'Scheduled job for gitlab status check is running.'
     else:
         return 'Gitlab status check is running.'
+    
+@app.cli.command("initdb")
+def init_db():
+    with app.app_context():
+        db.create_all()
+        print("Database tables created.")
 
 
 if __name__ == '__main__':
-    db.create_all()
-
-    app.run(debug=True)
-    
+    app.run(host='0.0.0.0', debug=True)
