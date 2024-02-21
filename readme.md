@@ -1,3 +1,14 @@
+App Description:
+The Following Application runs an api which can be used to get gitlab health status
+As part of testing the following uses a mock response and needs to reconfigured to actual calls to the gitlab instance
+
+To disable Mock
+In App.py update the mock variable to false and ensure base URL is pointing to the corresponding gitlab instance
+
+To run the health check manually
+go the the url or if in local access as follows: http://localhost:8080/status
+
+
 To run locally
 follow the following steps:
 1. Install Docker if you haven't
